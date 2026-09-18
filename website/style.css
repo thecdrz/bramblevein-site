@@ -22,7 +22,7 @@ h1 em { color:var(--gold); font-weight:500; }
 .download:hover { background:#ffd582; transform:translateY(-2px); }
 .download:focus-visible { outline:3px solid #fff; outline-offset:3px; }
 .download-status { margin:12px 0 0; color:#d8e1d2; font-size:12px; }
-.hero-bottom { display:flex; justify-content:space-between; gap:20px; margin-top:auto; padding:0 clamp(24px,7vw,112px) 25px; font-size:10px; font-weight:700; letter-spacing:.18em; }
+.hero-bottom { display:flex; justify-content:flex-end; gap:20px; margin-top:auto; padding:0 clamp(24px,7vw,112px) 25px; font-size:10px; font-weight:700; letter-spacing:.18em; }
 @media(max-width:700px) {
   .hero-art { object-position:62% center; }
   .hero-shade { background:linear-gradient(90deg,#0c1b15ed,#0c1b1580),linear-gradient(0deg,#0c1b15e8,transparent 48%); }
