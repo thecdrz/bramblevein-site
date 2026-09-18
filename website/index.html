@@ -4,67 +4,24 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#151c19">
-  <meta name="description" content="Bramblevein is a 2D sandbox adventure in development. Explore, build, and discover what lies beneath.">
+  <meta name="description" content="Bramblevein is a 2D sandbox adventure of mining, crafting and exploration, built for solo and two-player play.">
   <title>Bramblevein — Make a home. Find what lies beneath.</title>
   <link rel="icon" href="images/icon.png">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="site-header">
-    <a class="brand" href="#top"><span aria-hidden="true">✦</span> BRAMBLEVEIN</a>
-    <nav aria-label="Main navigation">
-      <a href="#about">The game</a>
-      <a href="#screenshots">Screenshots</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
-
-  <main id="top">
-    <section class="hero" aria-labelledby="hero-title">
-      <img class="hero-art" src="images/title.png" alt="Bramblevein title art with a traveler, campfire, woodland home and caves beneath the earth">
-      <div class="hero-shade"></div>
-      <div class="hero-content">
-        <p class="eyebrow">A LIVING WORLD ABOVE &amp; BELOW</p>
-        <h1 id="hero-title">Make a home.<br><em>Find what lies beneath.</em></h1>
-        <p class="hero-lede">A 2D sandbox adventure of mining, crafting and exploration. Set out alone or share the journey with a friend.</p>
-        <div class="hero-actions">
-          <a class="button button-primary" href="#about">Discover the game <span aria-hidden="true">↓</span></a>
-          <a class="button button-outline" href="mailto:scott.moreau@hey.com?subject=Bramblevein">Get in touch <span aria-hidden="true">↗</span></a>
-        </div>
-      </div>
-      <div class="hero-bottom"><span>✦ &nbsp; BUILD YOUR STORY</span><span>IN DEVELOPMENT</span></div>
-    </section>
-
-    <section class="about section-wrap" id="about">
-      <div><p class="eyebrow">THE GAME</p><h2>One world.<br><em>Many ways to wander.</em></h2></div>
-      <div class="about-copy">
-        <p>Follow branching caves into ruins, cross changing biomes, and bring what you find home. Mine and craft, build a shelter, fish and cook, meet neighbors, and prepare for encounters deeper underground.</p>
-        <p>Bramblevein is being built for solo play and two-player co-op. It is still in pre-1.0 development.</p>
-      </div>
-    </section>
-
-    <section class="screenshots" id="screenshots">
-      <div class="section-wrap">
-        <div class="section-heading"><div><p class="eyebrow">A LOOK INSIDE</p><h2>From the <em>current journey.</em></h2></div><p>Early development captures. New screenshots are coming as the game evolves.</p></div>
-        <div class="gallery">
-          <figure><button class="image-button" data-full="images/forest.png" data-caption="A home at the edge of the forest"><img src="images/forest.png" alt="A furnished woodland home above cave layers" loading="lazy"></button><figcaption>Forest &amp; home</figcaption></figure>
-          <figure><button class="image-button" data-full="images/ember-ruin.png" data-caption="An underground ruin"><img src="images/ember-ruin.png" alt="A traveler exploring a torchlit underground ruin" loading="lazy"></button><figcaption>Below the surface</figcaption></figure>
-          <figure><button class="image-button" data-full="images/frost-refuge.png" data-caption="A refuge in the snow"><img src="images/frost-refuge.png" alt="A refuge in a snowy biome" loading="lazy"></button><figcaption>Changing climates</figcaption></figure>
-        </div>
-      </div>
-    </section>
-
-    <section class="development section-wrap">
-      <p class="eyebrow">WHAT'S BEING WORKED ON</p>
-      <h2>The world keeps <em>growing.</em></h2>
-      <p>The latest source work expands routes into Sky and Hell, adds more varied destinations and villages, and polishes the journal, combat feel and ultrawide presentation. These changes are in development; a public 1.0 release has not been announced.</p>
-    </section>
-
-    <section class="contact" id="contact"><div class="section-wrap contact-inner"><div><p class="eyebrow">CURIOUS ABOUT BRAMBLEVEIN?</p><h2>Let’s talk about<br><em>what’s next.</em></h2></div><div><p>For questions, feedback or more information about the game, email Scott.</p><a class="button button-primary" href="mailto:scott.moreau@hey.com?subject=Bramblevein">scott.moreau@hey.com <span aria-hidden="true">↗</span></a></div></div></section>
+  <header class="site-header"><span class="brand"><span aria-hidden="true">✦</span> BRAMBLEVEIN</span></header>
+  <main class="hero">
+    <img class="hero-art" src="images/title.png" alt="A traveler beside a campfire and woodland home, with caves below">
+    <div class="hero-shade"></div>
+    <div class="hero-content">
+      <p class="eyebrow">A LIVING WORLD ABOVE &amp; BELOW</p>
+      <h1>Make a home.<br><em>Find what lies beneath.</em></h1>
+      <p class="hero-lede">Mine, craft, explore and build your place in a changing 2D world. Set out alone or share the journey with a friend.</p>
+      <button class="download" type="button" disabled aria-describedby="download-status">Download for Windows <span aria-hidden="true">↓</span></button>
+      <p class="download-status" id="download-status">The download is being prepared.</p>
+    </div>
+    <div class="hero-bottom"><span>✦ &nbsp; BUILD YOUR STORY</span><span>IN DEVELOPMENT</span></div>
   </main>
-
-  <footer><span>© 2026 BRAMBLEVEIN</span><a href="#top">BACK TO TOP ↑</a></footer>
-  <dialog id="lightbox" aria-label="Screenshot viewer"><button class="close" aria-label="Close screenshot">×</button><img alt=""><p></p></dialog>
-  <script src="script.js"></script>
 </body>
 </html>
