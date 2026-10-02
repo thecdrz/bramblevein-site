@@ -56,6 +56,27 @@
       "kind": "In-game capture, HUD hidden",
       "width": 1280,
       "height": 720
+    },
+    {
+      "file": "feature-bosses.webp",
+      "source": "tests/artifacts/website-overhaul/boss-preview.png",
+      "kind": "Current creature renderer, posed preview",
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "file": "feature-crafting.webp",
+      "source": "tests/artifacts/animated-workshop/crafting-animated.png",
+      "kind": "In-game development capture, crafting UI",
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "file": "feature-fishing.webp",
+      "source": "tests/artifacts/website-overhaul/fishing-preview.png",
+      "kind": "Current fishing interface, staged preview",
+      "width": 1280,
+      "height": 720
     }
   ]
 }

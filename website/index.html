@@ -49,8 +49,7 @@
         >Bramblevein<span aria-hidden="true">✦</span></a
       >
       <nav aria-label="Main navigation">
-        <a href="#game">The game</a><a href="#world">The world</a
-        ><a href="#gallery">Gallery</a>
+        <a href="#game">The game</a><a href="#gallery">Discover</a>
       </nav>
       <a class="header-cta" href="https://thecdrz.itch.io/bramblevein"
         >Visit the playtest <span aria-hidden="true">↗</span></a
@@ -98,6 +97,10 @@
             >
           </div>
         </div>
+        <canvas class="hero-ambience" aria-hidden="true"></canvas>
+        <button class="motion-toggle" type="button" hidden aria-pressed="false">
+          Pause ambience
+        </button>
         <span class="art-note">Title-screen artwork</span>
       </section>
       <div class="world-strip" aria-label="Game at a glance">
@@ -174,73 +177,6 @@
         </article>
       </section>
       <section
-        id="world"
-        class="world-section section-space"
-        aria-labelledby="world-heading"
-      >
-        <div class="wrap">
-          <div class="section-heading">
-            <div>
-              <p class="eyebrow">Beyond the front door</p>
-              <h2 id="world-heading">
-                A world with<br /><em>another side.</em>
-              </h2>
-            </div>
-            <p>
-              From open shores to frozen peaks and the glow of the deep,
-              Bramblevein’s world has more than one mood.<span
-                class="caption-note"
-                >A glimpse through the game’s loading-screen artwork.</span
-              >
-            </p>
-          </div>
-          <div class="world-cards">
-            <figure>
-              <img
-                src="images/current/scene-coast.webp"
-                width="960"
-                height="540"
-                alt="Sunset on a rocky coast with a lighthouse, forested cliffs, and a quiet wooden pier."
-                loading="lazy"
-              />
-              <figcaption>
-                <span class="eyebrow">Above the surface</span>
-                <h3>Follow the light.</h3>
-                <p>Open skies. Quiet shores. A little room to breathe.</p>
-              </figcaption>
-            </figure>
-            <figure>
-              <img
-                src="images/current/scene-rime.webp"
-                width="960"
-                height="540"
-                alt="A snowy mountain valley beneath an aurora, with a warmly lit stone lodge."
-                loading="lazy"
-              />
-              <figcaption>
-                <span class="eyebrow">Beyond the familiar</span>
-                <h3>Wander a little further.</h3>
-                <p>Cold blue evenings and a warm window in the distance.</p>
-              </figcaption>
-            </figure>
-            <figure>
-              <img
-                src="images/current/scene-deep.webp"
-                width="960"
-                height="540"
-                alt="An immense cavern with violet crystals, waterfalls, and lantern-lit wooden walkways."
-                loading="lazy"
-              />
-              <figcaption>
-                <span class="eyebrow">Beneath it all</span>
-                <h3>Keep looking down.</h3>
-                <p>There’s always something beyond the next pool of light.</p>
-              </figcaption>
-            </figure>
-          </div>
-        </div>
-      </section>
-      <section
         id="gallery"
         class="gallery-section wrap section-space"
         aria-labelledby="gallery-heading"
@@ -251,83 +187,82 @@
             <h2 id="gallery-heading">This is <em>Bramblevein.</em></h2>
           </div>
           <p>
-            Real in-game captures from the current development build. Select an
-            image to explore the details.
+            A closer look at the creatures, projects, and catches that give the
+            adventure its character. Select an image to explore the details.
           </p>
         </div>
-        <div class="gameplay-grid">
-          <figure>
+        <div class="gameplay-grid feature-grid">
+          <figure class="boss-feature">
             <a
               class="gallery-link"
-              href="images/current/gameplay-village.webp"
-              data-caption="An afternoon in the village. In-game capture, HUD hidden."
-              aria-label="Enlarge village gameplay screenshot"
+              href="images/current/feature-bosses.webp"
+              data-caption="Gloam Warden and Cinder Colossus. Current in-game creature renderer, posed preview."
+              aria-label="Enlarge boss creature preview"
               ><img
-                src="images/current/gameplay-village.webp"
+                src="images/current/feature-bosses.webp"
                 width="1280"
                 height="720"
-                alt="The player and Luna outside a timber-framed village tavern, beside a market stall and a passing neighbour."
+                alt="The antlered, lantern-bearing Gloam Warden and the molten-armoured Cinder Colossus, rendered by the game."
                 loading="lazy"
               /><span class="expand" aria-hidden="true">↗</span></a
             >
-            <figcaption>Meet the neighbours.</figcaption>
+            <figcaption>
+              <span class="eyebrow">Meet something bigger</span>
+              <h3>Not everything wants company.</h3>
+              <p>Venture beyond the hearth to face Bramblevein’s bosses.</p>
+              <small>Creature renderer · Posed preview</small>
+            </figcaption>
           </figure>
           <figure>
             <a
               class="gallery-link"
-              href="images/current/gameplay-cave.webp"
-              data-caption="Following the roots underground. In-game capture, HUD hidden."
-              aria-label="Enlarge cave gameplay screenshot"
+              href="images/current/feature-crafting.webp"
+              data-caption="The animated workshop and crafting queue. In-game development capture."
+              aria-label="Enlarge crafting system screenshot"
               ><img
-                src="images/current/gameplay-cave.webp"
+                src="images/current/feature-crafting.webp"
                 width="1280"
                 height="720"
-                alt="A torch-carrying adventurer and Luna exploring a rocky underground passage threaded with roots and moss."
+                alt="The crafting workshop showing a willow rod being made, queued projects, and the warm wooden workbench."
                 loading="lazy"
               /><span class="expand" aria-hidden="true">↗</span></a
             >
-            <figcaption>Bring a light. And a friend.</figcaption>
+            <figcaption>
+              <span class="eyebrow">Make something yours</span>
+              <h3>A little work. A lasting reward.</h3>
+              <p>
+                Plan your projects, queue up your next creation, and return to
+                collect your finished work.
+              </p>
+              <small>In-game capture · Crafting system</small>
+            </figcaption>
+          </figure>
+          <figure>
+            <a
+              class="gallery-link"
+              href="images/current/feature-fishing.webp"
+              data-caption="Playing the line against a running Copperfin. Current fishing interface, staged preview."
+              aria-label="Enlarge fishing system preview"
+              ><img
+                src="images/current/feature-fishing.webp"
+                width="1280"
+                height="720"
+                alt="A Copperfin pulling on the fishing line, with distance-to-bank and line-strain meters."
+                loading="lazy"
+              /><span class="expand" aria-hidden="true">↗</span></a
+            >
+            <figcaption>
+              <span class="eyebrow">Just one more cast</span>
+              <h3>Quiet water. Quite a fight.</h3>
+              <p>Read the fish, manage your line, and bring your catch home.</p>
+              <small>Fishing interface · Staged preview</small>
+            </figcaption>
           </figure>
         </div>
         <p class="gallery-disclaimer">
-          Captured with the HUD hidden. Development visuals and features may
-          differ from the public playtest.
+          Gameplay captures and clearly labelled system previews. Development
+          visuals and features may differ from the public playtest.
         </p>
-      </section>
-      <section class="faq-section wrap" aria-labelledby="faq-heading">
-        <div>
-          <p class="eyebrow">Before you set out</p>
-          <h2 id="faq-heading">A few <em>field notes.</em></h2>
-        </div>
-        <div class="questions">
-          <details>
-            <summary>Is Bramblevein finished?</summary>
-            <p>
-              Not yet. Bramblevein is in active development. The public playtest
-              is a chance to explore what’s here and help shape what comes
-              next—not a finished release.
-            </p>
-          </details>
-          <details>
-            <summary>Where can I try it?</summary>
-            <p>
-              Visit
-              <a href="https://thecdrz.itch.io/bramblevein"
-                >Bramblevein on itch.io</a
-              >
-              for the available Windows playtest, current build details, and
-              download instructions.
-            </p>
-          </details>
-          <details>
-            <summary>Can I play with a friend?</summary>
-            <p>
-              The game supports solo play and two-player co-op. Check the
-              playtest page for the current build’s setup instructions and known
-              limitations.
-            </p>
-          </details>
-        </div>
       </section>
       <section
         class="invitation section-space"

@@ -14,9 +14,10 @@ python -m http.server 8765 --directory website
 
 ## Assets
 
-The site uses the current game wordmark, title/loading artwork, and actual
-development-build screenshots. Artwork is labelled separately from gameplay.
-Gameplay captures hide only the HUD; they are not AI-generated or retouched.
+The site uses the current game wordmark and valley title artwork in the hero,
+plus actual development-build captures and clearly labelled creature/interface
+previews. There is no loading-screen gallery. Gameplay captures and staged
+previews are not AI-generated or retouched; the cottage capture hides the HUD.
 `website/images/current/manifest.json` records source assets and the game commit.
 Optimized WebP assets are committed so deployment needs no build step.
 
@@ -37,7 +38,8 @@ node tools/check_site.cjs http://127.0.0.1:8765/
 Optional `PLAYWRIGHT_MODULE` and `CHROMIUM_PATH` environment variables select
 an existing Playwright installation/browser. Tests cover desktop, mobile,
 narrow phone, tablet, and wide desktop layouts; loaded images; overflow;
-keyboard lightbox/focus restoration; navigation; FAQ; and no-JavaScript fallback.
+keyboard lightbox/focus restoration; navigation; ambient animation and its pause
+control/reduced-motion preference; and no-JavaScript fallback.
 Screenshots are written to the ignored `.preview/` directory.
 
 Copy intentionally describes an in-development Windows playtest, not a final

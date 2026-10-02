@@ -18,6 +18,9 @@ sources = {
     "gameplay-home": ("tests/artifacts/website-overhaul/home.png", 1280, "In-game capture, HUD hidden"),
     "gameplay-village": ("tests/artifacts/website-overhaul/village.png", 1280, "In-game capture, HUD hidden"),
     "gameplay-cave": ("tests/artifacts/website-overhaul/cave.png", 1280, "In-game capture, HUD hidden"),
+    "feature-bosses": ("tests/artifacts/website-overhaul/boss-preview.png", 1280, "Current creature renderer, posed preview"),
+    "feature-crafting": ("tests/artifacts/animated-workshop/crafting-animated.png", 1280, "In-game development capture, crafting UI"),
+    "feature-fishing": ("tests/artifacts/website-overhaul/fishing-preview.png", 1280, "Current fishing interface, staged preview"),
 }
 manifest = []
 for name, (relative, width, kind) in sources.items():

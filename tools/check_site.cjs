@@ -71,13 +71,41 @@ fs.mkdirSync(output, { recursive: true });
       );
       await opener.press("Enter");
       await page.getByRole("button", { name: "Close screenshot" }).click();
-      await page.getByText("Is Bramblevein finished?", { exact: true }).click();
       assert.equal(
-        await page
-          .locator("details")
-          .first()
-          .evaluate((details) => details.open),
-        true,
+        await page.locator(".world-section,.faq-section").count(),
+        0,
+      );
+      assert.equal(
+        await page.locator(".feature-grid .gallery-link").count(),
+        3,
+      );
+      assert.equal(await page.locator(".motion-toggle").isVisible(), false);
+      await page.emulateMedia({ reducedMotion: "no-preference" });
+      await page.evaluate(() => scrollTo(0, 0));
+      await page.waitForFunction(
+        () => document.querySelector(".hero").dataset.ambience === "playing",
+      );
+      await page.getByRole("button", { name: "Pause ambience" }).click();
+      assert.equal(
+        await page.locator(".hero").getAttribute("data-ambience"),
+        "paused",
+      );
+      await page.getByRole("button", { name: "Resume ambience" }).click();
+      assert.equal(
+        await page.locator(".hero").getAttribute("data-ambience"),
+        "playing",
+      );
+      await page.locator("#gallery").scrollIntoViewIfNeeded();
+      await page.waitForFunction(
+        () => document.querySelector(".hero").dataset.ambience === "paused",
+      );
+      await page.evaluate(() => scrollTo(0, 0));
+      await page.waitForFunction(
+        () => document.querySelector(".hero").dataset.ambience === "playing",
+      );
+      await page.emulateMedia({ reducedMotion: "reduce" });
+      await page.waitForFunction(
+        () => document.querySelector(".hero").dataset.ambience === "paused",
       );
       await page.locator('nav a[href="#gallery"]').click();
       assert.equal(new URL(page.url()).hash, "#gallery");
@@ -85,7 +113,7 @@ fs.mkdirSync(output, { recursive: true });
       assert.equal(await page.locator("img:not([alt])").count(), 0);
       assert.deepEqual(errors, [], `${name}: browser or network errors`);
       console.log(
-        `PASS ${name} ${width}x${height}: images, overflow, navigation, keyboard lightbox, FAQ`,
+        `PASS ${name} ${width}x${height}: images, overflow, navigation, keyboard lightbox, ambience/reduced motion`,
       );
       await page.close();
     }
