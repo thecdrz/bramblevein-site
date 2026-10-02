@@ -1,0 +1,61 @@
+{
+  "game_commit": "82b78941e8c70ffed51a6eb95370a0a26c105aaf",
+  "assets": [
+    {
+      "file": "hero-valley.webp",
+      "source": "assets/art/ui/loading-valley-v2.png",
+      "kind": "Title-screen artwork",
+      "width": 1672,
+      "height": 941
+    },
+    {
+      "file": "wordmark.webp",
+      "source": "assets/art/ui/bramblevein-wordmark-v2.png",
+      "kind": "Game wordmark",
+      "width": 1600,
+      "height": 543
+    },
+    {
+      "file": "scene-coast.webp",
+      "source": "assets/art/ui/loading-sunroot-coast-v1.png",
+      "kind": "Loading-screen artwork",
+      "width": 960,
+      "height": 540
+    },
+    {
+      "file": "scene-rime.webp",
+      "source": "assets/art/ui/loading-rimewatch-v1.png",
+      "kind": "Loading-screen artwork",
+      "width": 960,
+      "height": 540
+    },
+    {
+      "file": "scene-deep.webp",
+      "source": "assets/art/ui/loading-emberdeep-v1.png",
+      "kind": "Loading-screen artwork",
+      "width": 960,
+      "height": 540
+    },
+    {
+      "file": "gameplay-home.webp",
+      "source": "tests/artifacts/website-overhaul/home.png",
+      "kind": "In-game capture, HUD hidden",
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "file": "gameplay-village.webp",
+      "source": "tests/artifacts/website-overhaul/village.png",
+      "kind": "In-game capture, HUD hidden",
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "file": "gameplay-cave.webp",
+      "source": "tests/artifacts/website-overhaul/cave.png",
+      "kind": "In-game capture, HUD hidden",
+      "width": 1280,
+      "height": 720
+    }
+  ]
+}
