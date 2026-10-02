@@ -23,6 +23,16 @@ sources = {
     "feature-fishing": ("tests/artifacts/website-overhaul/fishing-preview.png", 1280, "Current fishing interface, staged preview"),
 }
 manifest = []
+sources.update({
+    "world-home-night": ("tests/artifacts/website-world/home-night-wide.png", 1280, "In-game night exterior, HUD hidden"),
+    "world-desert": ("tests/artifacts/website-world/desert.png", 1280, "In-game desert, HUD hidden"),
+    "world-frost": ("tests/artifacts/website-world/orchard.png", 1280, "In-game frozen landscape, HUD hidden"),
+    "world-underground": ("tests/artifacts/website-world/underground.png", 1280, "In-game root cavern, HUD hidden"),
+    "world-crypt": ("tests/artifacts/website-world/crypt.png", 1280, "In-game crypt, HUD hidden"),
+    "world-fishing": ("tests/artifacts/website-world/fishing-world.png", 1280, "In-game staged fishing demonstration, HUD hidden"),
+})
+for boss in ["warden", "root", "colossus", "rimekeeper"]:
+    sources[f"boss-{boss}"] = (f"tests/artifacts/website-world/boss-{boss}.png", 1280, "Current game creature renderer, action-pose preview")
 for name, (relative, width, kind) in sources.items():
     with Image.open(args.game_root / relative) as source:
         picture = source.convert("RGBA" if name == "wordmark" else "RGB")

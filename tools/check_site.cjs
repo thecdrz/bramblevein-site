@@ -77,7 +77,7 @@ fs.mkdirSync(output, { recursive: true });
       );
       assert.equal(
         await page.locator(".feature-grid .gallery-link").count(),
-        3,
+        6,
       );
       assert.equal(await page.locator(".motion-toggle").isVisible(), false);
       await page.emulateMedia({ reducedMotion: "no-preference" });
@@ -85,10 +85,29 @@ fs.mkdirSync(output, { recursive: true });
       await page.waitForFunction(
         () => document.querySelector(".hero").dataset.ambience === "playing",
       );
+      if (name === "desktop") {
+        const before = await page.locator(".hero").screenshot();
+        await page.waitForTimeout(350);
+        const after = await page.locator(".hero").screenshot();
+        assert.equal(
+          before.equals(after),
+          false,
+          "Hero animation must change visible rendered pixels",
+        );
+      }
       await page.getByRole("button", { name: "Pause ambience" }).click();
       assert.equal(
         await page.locator(".hero").getAttribute("data-ambience"),
         "paused",
+      );
+      const pausedCanvas = await page
+        .locator("canvas")
+        .evaluate((canvas) => canvas.toDataURL());
+      await page.waitForTimeout(120);
+      assert.equal(
+        await page.locator("canvas").evaluate((canvas) => canvas.toDataURL()),
+        pausedCanvas,
+        "Paused ambience must freeze",
       );
       await page.getByRole("button", { name: "Resume ambience" }).click();
       assert.equal(
@@ -107,7 +126,8 @@ fs.mkdirSync(output, { recursive: true });
       await page.waitForFunction(
         () => document.querySelector(".hero").dataset.ambience === "paused",
       );
-      await page.locator('nav a[href="#gallery"]').click();
+      await page.evaluate(() => scrollTo({ top: 0, behavior: "instant" }));
+      await page.locator('.actions a[href="#gallery"]').click();
       assert.equal(new URL(page.url()).hash, "#gallery");
       assert.equal(await page.locator("h1").count(), 1);
       assert.equal(await page.locator("img:not([alt])").count(), 0);
@@ -126,10 +146,12 @@ fs.mkdirSync(output, { recursive: true });
     // Both are a usable non-JS fallback to the original full-size asset.
     const destination = Promise.any([
       fallback.waitForEvent("download").then((download) => download.url()),
-      fallback.waitForURL("**/gameplay-home.webp").then(() => fallback.url()),
+      fallback
+        .waitForURL("**/world-home-night.webp")
+        .then(() => fallback.url()),
     ]);
     await fallback.locator(".gallery-link").first().click();
-    assert.match(await destination, /gameplay-home.webp$/);
+    assert.match(await destination, /world-home-night.webp$/);
     await fallback.close();
     console.log("PASS no-JavaScript gallery fallback");
   } finally {

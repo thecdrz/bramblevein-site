@@ -45,16 +45,31 @@ if (hero && context && motionButton) {
       [1516, 597],
       [1560, 340],
     ].forEach(([x, y], i) => {
-      glow(x, y, 38, 0.045 + Math.sin(elapsed * 1.7 + i) * 0.015);
+      glow(x, y, 46, 0.16 + Math.sin(elapsed * 2.3 + i) * 0.055);
     });
     for (let i = 0; i < 10; i++) {
       const x = 800 + i * 32 + Math.sin(elapsed * 0.12 + i * 1.7) * 12;
       const y = 479 + Math.sin(i * 2.3) * 18 + Math.sin(elapsed * 0.25 + i) * 3;
       const alpha =
-        Math.pow(Math.max(0, Math.sin(elapsed * 0.7 + i * 2.1)), 3) * 0.24;
+        Math.pow(Math.max(0, Math.sin(elapsed * 0.9 + i * 2.1)), 3) * 0.55;
       glow(x, y, 7, alpha * 0.4);
       context.fillStyle = `rgba(240,223,146,${alpha})`;
-      context.fillRect(x, y, 1.3, 1.3);
+      context.fillRect(x, y, 2, 1.4);
+    }
+    // A soft chimney plume, registered to the painted cottage roof.
+    for (let i = 0; i < 7; i++) {
+      const age = (elapsed * 0.16 + i / 7) % 1;
+      const x = 1572 + age * 36 + Math.sin(age * 7 + elapsed * 0.3) * age * 12;
+      const y = 164 - age * 125;
+      const r = 9 + age * 22;
+      const mist = context.createRadialGradient(x, y, 0, x, y, r);
+      mist.addColorStop(
+        0,
+        `rgba(219,215,204,${Math.sin(age * Math.PI) * 0.14})`,
+      );
+      mist.addColorStop(1, "rgba(219,215,204,0)");
+      context.fillStyle = mist;
+      context.fillRect(x - r, y - r, r * 2, r * 2);
     }
     context.restore();
   }

@@ -77,6 +77,76 @@
       "kind": "Current fishing interface, staged preview",
       "width": 1280,
       "height": 720
+    },
+    {
+      "file": "world-home-night.webp",
+      "source": "tests/artifacts/website-world/home-night-wide.png",
+      "kind": "In-game night exterior, HUD hidden",
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "file": "world-desert.webp",
+      "source": "tests/artifacts/website-world/desert.png",
+      "kind": "In-game desert, HUD hidden",
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "file": "world-frost.webp",
+      "source": "tests/artifacts/website-world/orchard.png",
+      "kind": "In-game frozen landscape, HUD hidden",
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "file": "world-underground.webp",
+      "source": "tests/artifacts/website-world/underground.png",
+      "kind": "In-game root cavern, HUD hidden",
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "file": "world-crypt.webp",
+      "source": "tests/artifacts/website-world/crypt.png",
+      "kind": "In-game crypt, HUD hidden",
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "file": "world-fishing.webp",
+      "source": "tests/artifacts/website-world/fishing-world.png",
+      "kind": "In-game staged fishing demonstration, HUD hidden",
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "file": "boss-warden.webp",
+      "source": "tests/artifacts/website-world/boss-warden.png",
+      "kind": "Current game creature renderer, action-pose preview",
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "file": "boss-root.webp",
+      "source": "tests/artifacts/website-world/boss-root.png",
+      "kind": "Current game creature renderer, action-pose preview",
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "file": "boss-colossus.webp",
+      "source": "tests/artifacts/website-world/boss-colossus.png",
+      "kind": "Current game creature renderer, action-pose preview",
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "file": "boss-rimekeeper.webp",
+      "source": "tests/artifacts/website-world/boss-rimekeeper.png",
+      "kind": "Current game creature renderer, action-pose preview",
+      "width": 1280,
+      "height": 720
     }
   ]
 }
